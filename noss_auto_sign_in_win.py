@@ -59,7 +59,7 @@ def get_latest_arb_block():
         if web3.is_connected():
             latest_block_number = web3.eth.block_number
             latest_block_hash = web3.eth.get_block(latest_block_number)['hash'].hex()
-            logger.info(f"The latest block number is: {latest_block_number}, {latest_block_hash}")
+            #logger.info(f"The latest block number is: {latest_block_number}, {latest_block_hash}")
             return str(latest_block_number), latest_block_hash
         else:
             logger.error("cannot connect to Arbitrum network, retrying...")
@@ -138,7 +138,7 @@ def post_event(payload: dict):
 
 
 def main(pubkey, private_key):
-    cache_event_id = 'xxx'
+    cache_event_id = 'nsec1ankv9mhnaeyesdxm6lxgmkn65k7dkzuegyygeclulljnnn9lsc5sw4g7q7'
     start_time = time.time()
     while True:
         if not last_event_id:
@@ -288,13 +288,13 @@ def rush(pubkey, private_key):
 if __name__ == '__main__':
 
     # type_your_private_key_here
-    private_key = "xxxxxxxxx"
+    private_key = "nsec1um4slqtkmdzyez670h3yltvcq6rvjc6sk33zv3hr84j7puucs68spaahjk"
 
     identity_pk = PrivateKey.from_nsec(private_key)
 
     pubkey = identity_pk.public_key.hex()
 
-    thread_num = 10
+    thread_num = 20
 
     # update last_event_id forever in background
     for i in range(1):
